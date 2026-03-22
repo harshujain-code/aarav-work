@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivaann's Car Comparison</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="car-compare.css">
+</head>
+<body>
+    <a href="index.html" class="back-link">&larr; Back Home</a>
+
+    <div class="page">
+        <header>
+            <h1>&#128663; Car vs Car</h1>
+            <p class="subtitle">Pick two cars and see which one wins!</p>
+        </header>
+
+        <div class="compare-area">
+            <!-- Car 1 -->
+            <div class="car-picker" id="car1-picker">
+                <h2>Car 1</h2>
+                <div class="search-wrapper">
+                    <input type="text" id="car1-search" class="car-search" placeholder="Search a car..." autocomplete="off">
+                    <div class="search-results" id="car1-results"></div>
+                </div>
+                <div class="car-card" id="car1-card">
+                    <div class="car-emoji" id="car1-emoji"></div>
+                    <h3 id="car1-name">-</h3>
+                    <div class="car-stats" id="car1-stats"></div>
+                </div>
+            </div>
+
+            <!-- VS Badge -->
+            <div class="vs-badge">VS</div>
+
+            <!-- Car 2 -->
+            <div class="car-picker" id="car2-picker">
+                <h2>Car 2</h2>
+                <div class="search-wrapper">
+                    <input type="text" id="car2-search" class="car-search" placeholder="Search a car..." autocomplete="off">
+                    <div class="search-results" id="car2-results"></div>
+                </div>
+                <div class="car-card" id="car2-card">
+                    <div class="car-emoji" id="car2-emoji"></div>
+                    <h3 id="car2-name">-</h3>
+                    <div class="car-stats" id="car2-stats"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Bars -->
+        <div class="comparison" id="comparison">
+            <h2>Head to Head</h2>
+            <div class="bars-container" id="bars-container"></div>
+            <div class="verdict" id="verdict"></div>
+        </div>
+    </div>
+
+    <script src="car-compare.js"></script>
+</body>
+</html>

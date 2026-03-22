@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Baloo 2', cursive, sans-serif;
+    background: linear-gradient(135deg, #1a472a, #2d6a4f, #40916c);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Fredoka', sans-serif;
+}
+
+.back-link {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 1rem;
+    z-index: 100;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: white;
+}
+
+/* Screens */
+.game-wrapper {
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.screen {
+    display: none;
+    width: 100%;
+    text-align: center;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* Start Screen */
+#start-screen h1 {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.85;
+    margin-bottom: 32px;
+}
+
+.difficulty {
+    margin-bottom: 32px;
+}
+
+.difficulty p {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.diff-btn {
+    font-family: 'Fredoka', sans-serif;
+    padding: 8px 20px;
+    margin: 0 6px;
+    border: 2px solid rgba(255,255,255,0.4);
+    background: transparent;
+    color: white;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.diff-btn.active {
+    background: rgba(255,255,255,0.25);
+    border-color: white;
+}
+
+.diff-btn:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+.big-btn {
+    font-family: 'Fredoka', sans-serif;
+    padding: 14px 48px;
+    background: linear-gradient(135deg, #e17055, #d63031);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.big-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.big-btn:active {
+    transform: scale(0.98);
+}
+
+/* Game Screen */
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 16px;
+}
+
+.score-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0,0,0,0.25);
+    border-radius: 12px;
+    padding: 8px 20px;
+    min-width: 80px;
+}
+
+.score-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+.score-value {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+#cricket-canvas {
+    width: 100%;
+    max-width: 440px;
+    height: 400px;
+    background: #1a472a;
+    border-radius: 16px;
+    border: 3px solid rgba(255,255,255,0.15);
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.hit-result {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.hit-result.show {
+    opacity: 1;
+}
+
+.hit-result.six { color: #ffeaa7; }
+.hit-result.four { color: #55efc4; }
+.hit-result.runs { color: #74b9ff; }
+.hit-result.out { color: #ff7675; }
+.hit-result.miss { color: #b2bec3; }
+.hit-result.dot { color: #dfe6e9; }
+
+.hint {
+    font-size: 0.95rem;
+    opacity: 0.7;
+    margin-top: 4px;
+}
+
+/* End Screen */
+.final-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 24px 0;
+}
+
+.final-label {
+    font-size: 1.1rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.final-value {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #ffeaa7;
+}
+
+.end-message {
+    font-size: 1.2rem;
+    margin-bottom: 32px;
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    #cricket-canvas {
+        height: 350px;
+    }
+
+    #start-screen h1 {
+        font-size: 2rem;
+    }
+
+    .scoreboard {
+        gap: 12px;
+    }
+
+    .score-item {
+        padding: 6px 14px;
+        min-width: 70px;
+    }
+}
